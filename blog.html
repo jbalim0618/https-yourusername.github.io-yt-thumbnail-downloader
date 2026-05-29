@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Blog — YouTube Tips & Thumbnail Guide — ThumbnailGrab</title>
+<meta name="description" content="Learn how to create better YouTube thumbnails, grow your channel, and download thumbnails for research. Free tips for YouTube creators."/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Epilogue:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--white:#ffffff;--off:#f5f6fa;--border:#e2e5ee;--text:#0f1625;--sub:#5a6478;--blue:#1a56db;--blue-bg:#eef3ff;--blue-bd:#c3d1f8;--shadow:0 1px 3px rgba(0,0,0,.07),0 4px 16px rgba(0,0,0,.07);--shadow-h:0 2px 8px rgba(0,0,0,.1),0 8px 32px rgba(0,0,0,.1)}
+body{background:var(--off);color:var(--text);font-family:'Epilogue',sans-serif;line-height:1.7}
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:62px}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo-icon{background:var(--blue);color:#fff;border-radius:8px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700}
+.nav-home{color:var(--blue);text-decoration:none;font-size:.85rem;font-weight:600}
+.hero{background:var(--white);border-bottom:1px solid var(--border);padding:56px 24px 48px;text-align:center}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--blue-bg);border:1px solid var(--blue-bd);border-radius:20px;padding:5px 14px;font-size:.72rem;font-weight:600;color:var(--blue);letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px}
+h1{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:800;color:var(--text);margin-bottom:12px}
+.hero-sub{color:var(--sub);font-size:.95rem;max-width:500px;margin:0 auto}
+.main{max-width:1100px;margin:0 auto;padding:48px 24px 80px}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
+.blog-card{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:box-shadow .2s,transform .2s;cursor:pointer}
+.blog-card:hover{box-shadow:var(--shadow-h);transform:translateY(-3px)}
+.blog-img{height:160px;display:flex;align-items:center;justify-content:center;font-size:3rem}
+.blog-body{padding:20px}
+.blog-tag{font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-bg);border:1px solid var(--blue-bd);border-radius:20px;padding:3px 10px;display:inline-block;margin-bottom:10px}
+.blog-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:800;color:var(--text);margin-bottom:8px;line-height:1.35}
+.blog-excerpt{font-size:.8rem;color:var(--sub);line-height:1.6;margin-bottom:14px}
+.blog-meta{display:flex;align-items:center;justify-content:space-between;font-size:.72rem;color:var(--sub)}
+.blog-read{color:var(--blue);font-weight:600;text-decoration:none;font-size:.78rem}
+.blog-read:hover{text-decoration:underline}
+
+/* Article styles */
+.article{display:none}
+.article.active{display:block}
+.article-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:40px;box-shadow:var(--shadow);max-width:800px;margin:0 auto}
+.back-btn{display:inline-flex;align-items:center;gap:6px;color:var(--blue);text-decoration:none;font-size:.85rem;font-weight:600;margin-bottom:24px;cursor:pointer;background:none;border:none;font-family:'Epilogue',sans-serif}
+.article-tag{font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-bg);border:1px solid var(--blue-bd);border-radius:20px;padding:3px 10px;display:inline-block;margin-bottom:14px}
+.article h2{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:800;color:var(--text);margin-bottom:14px;line-height:1.25}
+.article-meta{font-size:.78rem;color:var(--sub);margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.article h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:800;color:var(--text);margin:24px 0 10px}
+.article p{font-size:.9rem;color:var(--sub);margin-bottom:14px;line-height:1.75}
+.article ul,.article ol{padding-left:22px;margin-bottom:14px}
+.article li{font-size:.9rem;color:var(--sub);margin-bottom:7px;line-height:1.6}
+.article strong{color:var(--text)}
+.tip-box{background:var(--blue-bg);border:1px solid var(--blue-bd);border-radius:10px;padding:16px 20px;margin:18px 0}
+.tip-box p{margin:0;font-size:.85rem;color:var(--blue)}
+footer{background:var(--text);color:rgba(255,255,255,.6);padding:32px 24px;text-align:center;font-size:.78rem}
+footer a{color:rgba(255,255,255,.5);text-decoration:none;margin:0 10px}
+footer a:hover{color:#fff}
+@media(max-width:600px){h1{font-size:1.6rem}.article-card{padding:24px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="logo-icon">YT</span>ThumbnailGrab</a>
+    <a href="index.html" class="nav-home">← Back to Home</a>
+  </div>
+</nav>
+<div class="hero">
+  <div class="hero-badge">Blog</div>
+  <h1>YouTube Tips & Guides</h1>
+  <p class="hero-sub">Learn how to create better thumbnails, grow your channel, and get more views on YouTube.</p>
+</div>
+<div class="main">
+  <!-- Blog List -->
+  <div id="blogList">
+    <div class="blog-grid">
+      <div class="blog-card" onclick="showArticle('a1')">
+        <div class="blog-img" style="background:#eef3ff">🖼️</div>
+        <div class="blog-body">
+          <span class="blog-tag">Thumbnails</span>
+          <div class="blog-title">How to Create YouTube Thumbnails That Get Clicked</div>
+          <div class="blog-excerpt">Learn the proven design principles that top YouTubers use to create thumbnails that drive massive click-through rates.</div>
+          <div class="blog-meta"><span>5 min read</span><a class="blog-read">Read More →</a></div>
+        </div>
+      </div>
+      <div class="blog-card" onclick="showArticle('a2')">
+        <div class="blog-img" style="background:#f0fdf4">📐</div>
+        <div class="blog-body">
+          <span class="blog-tag">Design</span>
+          <div class="blog-title">YouTube Thumbnail Size & Resolution Guide 2026</div>
+          <div class="blog-excerpt">The complete guide to YouTube thumbnail dimensions, file sizes, and resolution requirements for 2026.</div>
+          <div class="blog-meta"><span>4 min read</span><a class="blog-read">Read More →</a></div>
+        </div>
+      </div>
+      <div class="blog-card" onclick="showArticle('a3')">
+        <div class="blog-img" style="background:#fff7ed">🔍</div>
+        <div class="blog-body">
+          <span class="blog-tag">Research</span>
+          <div class="blog-title">How to Research Competitor Thumbnails on YouTube</div>
+          <div class="blog-excerpt">Discover how to analyze competitor thumbnails to understand what works in your niche and improve your own designs.</div>
+          <div class="blog-meta"><span>6 min read</span><a class="blog-read">Read More →</a></div>
+        </div>
+      </div>
+      <div class="blog-card" onclick="showArticle('a4')">
+        <div class="blog-img" style="background:#fdf4ff">🎨</div>
+        <div class="blog-body">
+          <span class="blog-tag">Design</span>
+          <div class="blog-title">Best Free Tools to Design YouTube Thumbnails</div>
+          <div class="blog-excerpt">A complete list of the best free and paid tools for creating professional YouTube thumbnails without design experience.</div>
+          <div class="blog-meta"><span>5 min read</span><a class="blog-read">Read More →</a></div>
+        </div>
+      </div>
+      <div class="blog-card" onclick="showArticle('a5')">
+        <div class="blog-img" style="background:#fff1f2">📈</div>
+        <div class="blog-body">
+          <span class="blog-tag">Growth</span>
+          <div class="blog-title">How Thumbnails Affect Your YouTube Click-Through Rate</div>
+          <div class="blog-excerpt">Understanding the relationship between thumbnail quality and CTR — and how improving your thumbnails can double your views.</div>
+          <div class="blog-meta"><span>7 min read</span><a class="blog-read">Read More →</a></div>
+        </div>
+      </div>
+      <div class="blog-card" onclick="showArticle('a6')">
+        <div class="blog-img" style="background:#f0f9ff">💡</div>
+        <div class="blog-body">
+          <span class="blog-tag">Tips</span>
+          <div class="blog-title">10 YouTube Thumbnail Mistakes You Must Avoid</div>
+          <div class="blog-excerpt">Common thumbnail mistakes that hurt your channel growth — and exactly how to fix them for better performance.</div>
+          <div class="blog-meta"><span>6 min read</span><a class="blog-read">Read More →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Articles -->
+  <div id="articleView" style="display:none">
+    <button class="back-btn" onclick="showList()">← Back to Blog</button>
+
+    <div id="a1" class="article">
+      <div class="article-card">
+        <span class="article-tag">Thumbnails</span>
+        <h2>How to Create YouTube Thumbnails That Get Clicked</h2>
+        <div class="article-meta">📅 January 2026 · 5 min read · ThumbnailGrab Team</div>
+        <p>Your YouTube thumbnail is the single most important factor in determining whether someone clicks on your video. Studies show that <strong>90% of the best-performing videos on YouTube have custom thumbnails</strong>. If you're using auto-generated thumbnails, you're leaving massive amounts of views on the table.</p>
+        <h3>1. Use High Contrast Colors</h3>
+        <p>Thumbnails that stand out in search results and the recommended feed use bold, high-contrast color combinations. Yellow and black, red and white, blue and orange — these combinations naturally draw the eye and perform consistently well.</p>
+        <h3>2. Include a Human Face</h3>
+        <p>Thumbnails with human faces showing strong emotions get significantly more clicks than those without. Surprised, excited, or shocked expressions work especially well because they trigger curiosity in viewers.</p>
+        <h3>3. Use Large, Readable Text</h3>
+        <p>If you include text in your thumbnail, keep it to 3-5 words maximum and make it large enough to read on a mobile phone screen. Most YouTube views come from mobile devices where small text becomes completely unreadable.</p>
+        <div class="tip-box"><p>💡 <strong>Pro Tip:</strong> Download thumbnails from your top competitors using ThumbnailGrab to analyze what design elements they use in your niche.</p></div>
+        <h3>4. Tell a Story</h3>
+        <p>The best thumbnails create curiosity and tell part of the story without giving everything away. They make the viewer feel like they need to click to find out what happens.</p>
+        <h3>5. Keep It Simple</h3>
+        <p>Resist the urge to cram everything into your thumbnail. The most effective thumbnails have one clear focal point — usually a face, a single object, or one key visual element that immediately communicates the video's topic.</p>
+        <h3>Conclusion</h3>
+        <p>Creating great thumbnails is a skill that improves with practice. Use ThumbnailGrab to download and study thumbnails from successful channels in your niche, then apply those principles to your own content.</p>
+      </div>
+    </div>
+
+    <div id="a2" class="article">
+      <div class="article-card">
+        <span class="article-tag">Design</span>
+        <h2>YouTube Thumbnail Size & Resolution Guide 2026</h2>
+        <div class="article-meta">📅 January 2026 · 4 min read · ThumbnailGrab Team</div>
+        <p>Getting your YouTube thumbnail dimensions right is essential for professional-looking videos. The wrong size can result in blurry, cropped, or pixelated thumbnails that hurt your channel's credibility.</p>
+        <h3>Recommended Thumbnail Size</h3>
+        <ul>
+          <li><strong>Resolution:</strong> 1280 × 720 pixels</li>
+          <li><strong>Minimum width:</strong> 640 pixels</li>
+          <li><strong>Aspect ratio:</strong> 16:9</li>
+          <li><strong>Maximum file size:</strong> 2MB</li>
+          <li><strong>File formats:</strong> JPG, PNG, GIF, BMP, or WebP</li>
+        </ul>
+        <h3>Why 1280 × 720?</h3>
+        <p>The 1280×720 resolution is the standard HD format that displays perfectly across all devices — from small mobile screens to large desktop monitors and TV screens. It's large enough to look sharp everywhere without being unnecessarily large.</p>
+        <div class="tip-box"><p>💡 <strong>Pro Tip:</strong> Always design at 1280×720 and export as JPG at 80-90% quality to keep file sizes small while maintaining visual quality.</p></div>
+        <h3>How ThumbnailGrab Helps</h3>
+        <p>When you use ThumbnailGrab to download a YouTube thumbnail, we provide the Max Quality option at 1280×720 pixels — exactly the right size for your design research and reference work.</p>
+        <h3>Safe Zone Guidelines</h3>
+        <p>Keep important visual elements — faces, text, logos — away from the edges of your thumbnail. YouTube sometimes adds time stamps and other overlays that can cover the corners of your image.</p>
+      </div>
+    </div>
+
+    <div id="a3" class="article">
+      <div class="article-card">
+        <span class="article-tag">Research</span>
+        <h2>How to Research Competitor Thumbnails on YouTube</h2>
+        <div class="article-meta">📅 January 2026 · 6 min read · ThumbnailGrab Team</div>
+        <p>One of the fastest ways to improve your YouTube thumbnails is to study what's already working in your niche. Competitive thumbnail research helps you understand patterns, color schemes, and styles that resonate with your target audience.</p>
+        <h3>Step 1 — Identify Top Channels in Your Niche</h3>
+        <p>Search for your main topic keywords on YouTube and note the channels that consistently appear in the top results. These channels have already figured out what thumbnails work for your audience.</p>
+        <h3>Step 2 — Download Their Thumbnails</h3>
+        <p>Use ThumbnailGrab to download thumbnails from your competitors' most successful videos. Focus on videos with the highest view counts relative to subscriber count, as these outperformed expectations.</p>
+        <h3>Step 3 — Analyze Patterns</h3>
+        <p>Look for common elements across successful thumbnails:</p>
+        <ul>
+          <li>Color schemes and combinations</li>
+          <li>Font styles and text placement</li>
+          <li>Whether faces appear and what expressions they show</li>
+          <li>Level of complexity vs simplicity</li>
+          <li>Use of borders, backgrounds, or graphic elements</li>
+        </ul>
+        <div class="tip-box"><p>💡 <strong>Pro Tip:</strong> Create a mood board with downloaded thumbnails from your top 5 competitors. Look for the 3-4 design elements they all share — those are your niche's success patterns.</p></div>
+        <h3>Step 4 — Apply What You Learn</h3>
+        <p>Don't copy — instead, use your research to inform your own unique style. Take the elements that work and add your own creative spin to stand out while still fitting your audience's expectations.</p>
+      </div>
+    </div>
+
+    <div id="a4" class="article">
+      <div class="article-card">
+        <span class="article-tag">Design</span>
+        <h2>Best Free Tools to Design YouTube Thumbnails</h2>
+        <div class="article-meta">📅 January 2026 · 5 min read · ThumbnailGrab Team</div>
+        <p>You don't need expensive software to create professional YouTube thumbnails. These free tools can help you design click-worthy thumbnails even if you have zero design experience.</p>
+        <h3>1. Canva (Best for Beginners)</h3>
+        <p>Canva is the most popular free thumbnail design tool. It offers hundreds of YouTube thumbnail templates, a drag-and-drop interface, and a massive library of free images and graphics. The free plan is more than enough for most creators.</p>
+        <h3>2. Adobe Express (Formerly Adobe Spark)</h3>
+        <p>Adobe Express offers professional-quality templates and access to Adobe's design assets. The free tier includes basic features that work well for thumbnail creation.</p>
+        <h3>3. Photopea (Best Photoshop Alternative)</h3>
+        <p>Photopea is a free, browser-based image editor that looks and works almost exactly like Adobe Photoshop. If you have some design experience, this is the most powerful free option available.</p>
+        <div class="tip-box"><p>💡 <strong>Pro Tip:</strong> Use ThumbnailGrab to download reference thumbnails, then open them in Canva or Photopea to analyze layers, fonts, and color codes for your own designs.</p></div>
+        <h3>4. GIMP (Advanced Free Tool)</h3>
+        <p>GIMP is a powerful open-source image editor for desktop. It has a steeper learning curve but offers professional-level features completely free.</p>
+        <h3>5. Snappa</h3>
+        <p>Snappa is specifically designed for social media graphics and includes YouTube thumbnail templates. The free plan allows 3 downloads per month.</p>
+      </div>
+    </div>
+
+    <div id="a5" class="article">
+      <div class="article-card">
+        <span class="article-tag">Growth</span>
+        <h2>How Thumbnails Affect Your YouTube Click-Through Rate</h2>
+        <div class="article-meta">📅 January 2026 · 7 min read · ThumbnailGrab Team</div>
+        <p>Click-Through Rate (CTR) is one of the most important metrics on YouTube. It measures the percentage of people who see your video and actually click on it. Your thumbnail is the #1 factor influencing your CTR.</p>
+        <h3>What is a Good CTR on YouTube?</h3>
+        <ul>
+          <li><strong>Below 2%</strong> — Poor performance, thumbnail needs improvement</li>
+          <li><strong>2% to 5%</strong> — Average performance</li>
+          <li><strong>5% to 10%</strong> — Good performance</li>
+          <li><strong>Above 10%</strong> — Excellent performance</li>
+        </ul>
+        <h3>How Thumbnails Impact CTR</h3>
+        <p>YouTube's algorithm uses CTR as a key signal to determine how widely to distribute your video. A video with a 8% CTR will be recommended to far more people than an identical video with a 2% CTR — even if the content quality is the same.</p>
+        <div class="tip-box"><p>💡 <strong>Pro Tip:</strong> If your CTR is below 4%, try A/B testing different thumbnails. Change one element at a time — try a different face expression, background color, or text — and track which version performs better.</p></div>
+        <h3>Thumbnail A/B Testing</h3>
+        <p>YouTube allows creators to test multiple thumbnails through YouTube Studio. Upload two different thumbnail versions and YouTube will show each to a portion of your audience, then automatically use the one with higher CTR.</p>
+        <h3>The Thumbnail-Title Relationship</h3>
+        <p>Your thumbnail and title work together as a team. The most effective combinations create curiosity where the thumbnail shows something intriguing and the title adds context — together they make clicking feel irresistible.</p>
+      </div>
+    </div>
+
+    <div id="a6" class="article">
+      <div class="article-card">
+        <span class="article-tag">Tips</span>
+        <h2>10 YouTube Thumbnail Mistakes You Must Avoid</h2>
+        <div class="article-meta">📅 January 2026 · 6 min read · ThumbnailGrab Team</div>
+        <p>Even experienced YouTubers make thumbnail mistakes that quietly kill their channel growth. Here are the 10 most common mistakes and exactly how to fix them.</p>
+        <ol>
+          <li><strong>Using auto-generated thumbnails</strong> — Always upload a custom thumbnail. Auto-generated frames are almost never the best representation of your video.</li>
+          <li><strong>Too much text</strong> — Keep text to 3-5 words maximum. More text makes thumbnails look cluttered and unreadable on mobile.</li>
+          <li><strong>Low resolution images</strong> — Always design at 1280×720. Blurry thumbnails signal low quality to potential viewers.</li>
+          <li><strong>Inconsistent branding</strong> — Your thumbnails should have a consistent style so viewers recognize your content instantly in their feed.</li>
+          <li><strong>Misleading thumbnails</strong> — Clickbait thumbnails that don't match the content will hurt your watch time and damage viewer trust.</li>
+          <li><strong>Too many elements</strong> — Focus on one main visual element. Busy thumbnails confuse viewers and reduce CTR.</li>
+          <li><strong>Ignoring mobile viewers</strong> — Over 70% of YouTube views are on mobile. Test your thumbnails at small sizes before publishing.</li>
+          <li><strong>Poor color contrast</strong> — Low contrast thumbnails disappear in YouTube's interface. Use bold, contrasting colors that stand out.</li>
+          <li><strong>Never testing alternatives</strong> — Always A/B test your thumbnails. Small changes can dramatically improve performance.</li>
+          <li><strong>Not studying competitors</strong> — Use ThumbnailGrab to download and analyze top-performing thumbnails in your niche regularly.</li>
+        </ol>
+        <div class="tip-box"><p>💡 <strong>Quick Fix:</strong> Go through your last 10 videos and count how many of these mistakes each thumbnail makes. Start fixing the ones that appear most often first.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div style="margin-bottom:12px;font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:800;color:#fff">ThumbnailGrab</div>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="blog.html">Blog</a>
+  <a href="privacy-policy.html">Privacy Policy</a>
+  <a href="terms.html">Terms of Use</a>
+  <a href="contact.html">Contact</a>
+  <div style="margin-top:16px;color:rgba(255,255,255,.3)">© 2026 ThumbnailGrab. Not affiliated with YouTube or Google LLC.</div>
+</footer>
+<script>
+function showArticle(id){
+  document.getElementById('blogList').style.display='none';
+  document.getElementById('articleView').style.display='block';
+  document.querySelectorAll('.article').forEach(a=>a.style.display='none');
+  document.getElementById(id).style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function showList(){
+  document.getElementById('blogList').style.display='block';
+  document.getElementById('articleView').style.display='none';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
